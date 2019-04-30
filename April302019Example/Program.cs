@@ -14,7 +14,9 @@ namespace April302019Example
             };
             var loanCapturer = new LoanCaptuerer(); // publisher
             var mailService = new MailService();
+            var smsService = new SmsService();
 
+            loanCapturer.LoanCaptured += smsService.LoanCapturedHandler;
             loanCapturer.LoanCaptured += mailService.LoanCapturedHandler;
 
             await loanCapturer.CaptureLoan(newLoan).ConfigureAwait(false);

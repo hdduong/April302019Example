@@ -6,9 +6,9 @@ namespace April302019Example
 {
     public class SmsService
     {
-        public void Send()
+        public void LoanCapturedHandler(object source, EventArgs e)
         {
-            Console.WriteLine("Send by SmsService");
+            Console.WriteLine("Send by Sms");
         }
     }
 }
