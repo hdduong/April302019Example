@@ -9,6 +9,13 @@ namespace April302019Example
         public int X { get; set; }
         public int Y { get; set; }
 
+        /* 
+        public PointStruct() 
+        {
+
+        }
+        */
+
         public PointStruct(int x, int y)
         {
             X = x;

@@ -6,7 +6,18 @@ namespace April302019Example
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var i = new int();
+            Console.WriteLine(i);
+
+            var i2 = 3;
+            Console.WriteLine(i2);
+
+            var p = new PointStruct();
+            Console.WriteLine(p.Display());
+           
+
+            var p1 = new PointStruct(3, 4);
+            Console.WriteLine(p1.Display());
         }
     }
 }
