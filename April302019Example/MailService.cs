@@ -6,7 +6,7 @@ namespace April302019Example
 {
     public class MailService
     {
-        public void Send()
+        public void LoanCapturedHandler(object source, EventArgs e)
         {
             Console.WriteLine("Send by MailService");
         }

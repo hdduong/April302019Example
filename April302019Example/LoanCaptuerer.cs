@@ -1,21 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace April302019Example
 {
     public class LoanCaptuerer
     {
-        private MailService _mailService;
-        private SmsService _smsService;
+        // 1. Define delegate
+        // 2. Define event basedon that delegate
+        // 3. Raise and event
 
-        public void CaptureLoan(Loan loan)
+        public delegate void LoanCapturedEventHandler(object  source, EventArgs args);
+
+        public event LoanCapturedEventHandler LoanCaptured;
+
+        public async Task CaptureLoan(Loan loan)
         {
             // add to db
+            Console.WriteLine("Adding loan to db ...");
+            await Task.Delay(2000);
+            Console.WriteLine("Loan added to db ...");
+            OnLoanCaptured();
+        }
 
-            // 
-            _mailService.Send();
-            _smsService.Send();
+        protected virtual void OnLoanCaptured()
+        {
+            if (LoanCaptured != null)
+            {
+                LoanCaptured(this, EventArgs.Empty);
+            }
         }
     }
 }
